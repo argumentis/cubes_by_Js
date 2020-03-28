@@ -22,7 +22,7 @@
 		rows = 4 ;
 	let elem = document.querySelector('#elem');
 	let table = document.createElement('table');
-	
+
 	createTable(elem);
     
                                             // ФУНКЦИЯ 	СОЗДАНИЯ ТАБЛИЦЫ
@@ -118,33 +118,25 @@
     }
 
 
-	window.onload = function() {
+window.onload = function() {
 
-// document.onmousemove = handleMouseMove;
+	document.onmousemove = changePosition;
 
-//     function handleMouseMove(e) {
-//       let foo = 38 + 42 * cols;
-//       console.log(foo);
-//         console.log(e.pageX);
-//         const posX = document.getElementById('removerows');
+	function changePosition(event) {
 
-//         if(foo > e.pageX > 72 ){
-//           posX.style.left  = ${e.pageX - 72}px;
-//         } else {
-//           return false;
-//         }
-//     }
-
-table.onclick = function changePosition(event) {
-  if (event.target.nodeName === 'TD') {
-	removecols.style.left = event.target.offsetLeft + 3 + 'px';
-	removerows.style.top = event.target.offsetTop + 3 + 'px';
-	rows = event.target.parentNode.rowIndex;
-	cols = event.target.cellIndex;
-  }
-}
-changePosition(event);
-
+		if (event.target.nodeName === 'TD') {
+			removerows.style.left = event.target.offsetLeft + 'px';
+			removecols.style.top = event.target.offsetTop  + 'px';
+		} 
+		
+		if (event.target.nodeName === 'TD' || event.target.nodeName === '#removecols' || event.target.nodeName === '#removerows') {
+			removecols.style.visibility = 'visible';
+			removerows.style.visibility = 'visible';
+		} else {
+			removecols.style.visibility = 'hidden';
+			removerows.style.visibility = 'hidden';
+		}
+	}
 }
 </script>
 </body>
