@@ -7,14 +7,16 @@
 
 </head>
 <body>
-<div class="flexRow">
-	<div id="removecols" onclick="removeCols(elem)"> - </div>
-	<div class="flexCol">
-		<div id="removerows" onclick="removeRows(elem)"> - </div>
-		<div id="elem" name="table"></div>
-		<div id="addrows" onclick="addRows(elem)"> + </div>
+<div class="borderVisibRemoveButtons">
+	<div class="flexRow">
+		<div id="removecols" onclick="removeCols(elem)"> - </div>
+		<div class="flexCol">
+			<div id="removerows" onclick="removeRows(elem)"> - </div>
+			<div id="elem" name="table"></div>
+			<div id="addrows" onclick="addRows(elem)"> + </div>
+		</div>
+		<div id="addcols" onclick="addCols(elem)"> + </div>
 	</div>
-	<div id="addcols" onclick="addCols(elem)"> + </div>
 </div>
 <script type="text/javascript">
 	"use strict";
@@ -129,7 +131,7 @@ window.onload = function() {
 			removecols.style.top = event.target.offsetTop  + 'px';
 		} 
 		
-		if (event.target.nodeName === 'TD' || event.target.nodeName === '#removecols' || event.target.nodeName === '#removerows') {
+		if (event.target.tagName === '.flexRow') {
 			removecols.style.visibility = 'visible';
 			removerows.style.visibility = 'visible';
 		} else {
