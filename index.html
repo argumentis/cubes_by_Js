@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1_less</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div class="flexRow">
+	<div id="removecols" onclick="removeCols(elem)"> - </div>
+	<div class="flexCol">
+		<div id="removerows" onclick="removeRows(elem)"> - </div>
+		<div id="elem" name="table"></div>
+		<div id="addrows" onclick="addRows(elem)"> + </div>
+	</div>
+	<div id="addcols" onclick="addCols(elem)"> + </div>
+</div>
+<script type="text/javascript">
+	"use strict";
+	let cols = 4 ,
+		rows = 4 ;
+	let elem = document.querySelector('#elem');
+	let table = document.createElement('table');
+	
+	createTable(elem);
+    
+                                            // ФУНКЦИЯ 	СОЗДАНИЯ ТАБЛИЦЫ
+	function createTable(parent) {
+		for (let i = 0; i < rows; i++) {
+			let tr = document.createElement('tr');
+
+			for (let j = 0; j < cols; j++) {
+				let td = document.createElement('td');
+				tr.appendChild(td);
+			}
+
+		table.appendChild(tr);
+
+		}
+
+	parent.appendChild(table);
+	console.log( "строки =" + rows);
+	console.log( "столбцы =" + cols);
+
+    }
+
+											// ФУНКЦИЯ ДОБАВЛЕНИЯ СТРОК
+	function addRows(parent) {
+			let tr = document.createElement('tr');
+			table.appendChild(tr);
+
+			for (let j = 0; j < cols; j++) {
+					let td = document.createElement('td');
+					tr.appendChild(td);
+					
+			}
+
+			rows ++;
+			console.clear();
+			console.log( "строки =" + rows);
+			console.log( "столбцы =" + cols);
+			parent.appendChild(table);
+			
+			return rows;
+	}
+											// ФУНКЦИЯ ДОБАВЛЕНИЯ КОЛОНОК
+	function addCols(parent) {
+			let trList = table.querySelectorAll('tr');
+			cols ++;
+			for (let j = 0; j < rows; j++) {
+					let td = document.createElement('td');
+					trList[j].appendChild(td);
+			}
+			parent.appendChild(table);
+			console.clear();
+			console.log( "строки =" + rows);
+			console.log( "столбцы =" + cols);
+			return cols;
+	}
+											// ФУНКЦИЯ УДАЛЕНИЯ КОЛОНОК
+	function removeCols(parent) {
+		if(rows >= 1 && cols > 1) {
+			let trList  = table.querySelectorAll('tr');
+			for (let j = 0; j < rows; j++) {
+				trList[j].deleteCell(-1);
+			}
+			parent.appendChild(table);
+			cols --;
+			console.clear();
+			console.log( "строки =" + rows);
+			console.log( "столбцы =" + cols);
+			return cols;
+		} else {
+			return cols , rows;
+		}
+	}
+
+											// ФУНКЦИЯ УДАЛЕНИЯ КОЛОНОК
+	function removeRows(parent) {
+		if(rows > 1 && cols >= 1) {
+			let trList  = table.querySelectorAll('tr');
+			let arrTr = [];
+					
+			for (let j = 0; j < rows; j++) {
+				arrTr [j] = trList [j];
+			}
+				let tr = arrTr[arrTr.length - 1];
+				table.removeChild(tr);
+				rows -- ;
+				console.clear();
+				console.log( "строки =" + rows);
+				console.log( "столбцы =" + cols);
+			return rows;
+		} else {
+			return rows , cols;
+		}
+    }
+
+
+	window.onload = function() {
+
+// document.onmousemove = handleMouseMove;
+
+//     function handleMouseMove(e) {
+//       let foo = 38 + 42 * cols;
+//       console.log(foo);
+//         console.log(e.pageX);
+//         const posX = document.getElementById('removerows');
+
+//         if(foo > e.pageX > 72 ){
+//           posX.style.left  = ${e.pageX - 72}px;
+//         } else {
+//           return false;
+//         }
+//     }
+
+table.onclick = function changePosition(event) {
+  if (event.target.nodeName === 'TD') {
+	removecols.style.left = event.target.offsetLeft + 3 + 'px';
+	removerows.style.top = event.target.offsetTop + 3 + 'px';
+	rows = event.target.parentNode.rowIndex;
+	cols = event.target.cellIndex;
+  }
+}
+changePosition(event);
+
+}
+</script>
+</body>
+</html>

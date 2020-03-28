@@ -1,0 +1,73 @@
+ table td{
+	padding: 20px;
+	border: 1px outset #fff;
+	background-color: #4ba0d2;
+} 
+
+table{
+	border-spacing: 0px;
+}
+
+.flexRow{
+	display: flex;
+	flex-direction: row;
+}
+
+/* #elem{
+} */
+
+.flexCol{
+	display: flex;
+	flex-direction: column;
+}
+
+#addrows{
+	flex-shrink: 0;
+	position: relative;
+	border: 1px outset #fff;
+	width: 40px;
+	height: 40px;
+	background-color: #da9c2a;
+	text-align: center;
+	color : #fff;
+
+}
+
+#addcols{
+	flex-shrink: 0;
+	position: relative;
+	border: 1px outset #fff;
+	width: 40px;
+	height: 40px;
+	background-color: #da9c2a;
+	text-align: center;
+	color : #fff;
+	margin-top: 42px;
+	
+}
+
+#removecols{
+	flex-shrink: 0;
+	position: relative;
+	border: 1px outset #fff;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background-color:#980007;
+	text-align: center;
+	color : #fff;
+	margin-top: 42px;
+	
+}
+
+#removerows{
+	flex-shrink: 0;
+	position: relative;
+	border: 1px outset #fff;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background-color:#980007;
+	text-align: center;
+	color : #fff;
+}
