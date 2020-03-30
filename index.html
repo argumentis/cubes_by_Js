@@ -9,9 +9,9 @@
 <body>
 <div class="borderVisibRemoveButtons">
 	<div id="flexrow" class="flexRow">
-		<div id="removecols" onclick="removeCols(elem)"> - </div>
+		<div id="removerows" onclick="removeRows(elem)"> - </div>
 		<div class="flexCol">
-			<div id="removerows" onclick="removeRows(elem)"> - </div>
+			<div id="removecols" onclick="removeCols(elem)"> - </div>
 			<div id="elem" name="table"></div>
 			<div id="addrows" onclick="addRows(elem)"> + </div>
 		</div>
@@ -89,6 +89,9 @@
 			}
 			parent.appendChild(table);
 			cols --;
+			if(Number.parseInt(removecols.style.left) >= 42) {
+				removecols.style.left = Number.parseInt(removecols.style.left) - 42 + 'px';
+			}
 			console.clear();
 			console.log( "строки =" + rows);
 			console.log( "столбцы =" + cols);
@@ -109,6 +112,9 @@
 			}
 				let tr = arrTr[arrTr.length - 1];
 				table.removeChild(tr);
+				if(Number.parseInt(removerows.style.top) >= 42) {
+					removerows.style.top = Number.parseInt(removerows.style.top) - 42 + 'px';
+				}
 				rows -- ;
 				console.clear();
 				console.log( "строки =" + rows);
@@ -125,19 +131,23 @@ window.onload = function() {
 	document.onmousemove = changePosition;
 
 	function changePosition(event) {
-
 		if (event.target.nodeName === 'TD') {
-			removerows.style.left = event.target.offsetLeft + 'px';
-			removecols.style.top = event.target.offsetTop  + 'px';
+			removecols.style.left = event.target.offsetLeft + 'px';
+			removerows.style.top = event.target.offsetTop  + 'px';
 		} 
 	}
 
 	document.getElementById("flexrow").onmouseover = mouseOver;
 	document.getElementById("flexrow").onmouseout = mouseOut;
+	
 
 	function mouseOver() {
+		if(cols != 1) {
 		removecols.style.visibility = 'visible';
+		}
+		if(rows != 1) {
 		removerows.style.visibility = 'visible';
+		}
 	}
 
 	function mouseOut() {

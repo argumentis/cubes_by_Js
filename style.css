@@ -28,6 +28,7 @@ table{
 }
 
 #addrows{
+	cursor: pointer;
 	flex-shrink: 0;
 	position: relative;
 	border: 1px outset #fff;
@@ -36,11 +37,14 @@ table{
 	font-size: 18pt;
 	background-color: #da9c2a;
 	color : #fff;
-} #addrows:hover {
+}
+
+#addrows:hover {
 	opacity: 0.5;
 }
 
 #addcols{
+	cursor: pointer;
 	flex-shrink: 0;
 	position: relative;
 	border: 1px outset #fff;
@@ -51,12 +55,15 @@ table{
 	color : #fff;
 	margin-top: 42px;
 
-} #addcols:hover {
+}
+
+#addcols:hover {
 	opacity: 0.5;
 }
 
 
 #removecols{
+	cursor: pointer;
 	flex-shrink: 0;
 	position: relative;
 	border: 1px outset #fff;
@@ -65,14 +72,15 @@ table{
 	font-size: 18pt;
 	background-color:#980007;
 	color : #fff;
-	margin-top: 42px;
-	
-} #removecols:hover {
+}
+
+#removecols:hover {
 	opacity: 0.5;
 }
 
 
 #removerows{
+	cursor: pointer;
 	flex-shrink: 0;
 	position: relative;
 	border: 1px outset #fff;
@@ -82,6 +90,8 @@ table{
 	background-color:#980007;
 	text-align: center;
 	color : #fff;
-}  #removerows:hover {
+	margin-top: 42px;
+} 
+ #removerows:hover {
 	opacity: 0.5;
 }
