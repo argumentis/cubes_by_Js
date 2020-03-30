@@ -28,6 +28,7 @@ table{
 }
 
 #addrows{
+	transition-duration: 0.4s;
 	cursor: pointer;
 	flex-shrink: 0;
 	position: relative;
@@ -44,6 +45,7 @@ table{
 }
 
 #addcols{
+	transition-duration: 0.4s;
 	cursor: pointer;
 	flex-shrink: 0;
 	position: relative;
@@ -63,6 +65,7 @@ table{
 
 
 #removecols{
+	transition-duration: 0.4s;
 	cursor: pointer;
 	flex-shrink: 0;
 	position: relative;
@@ -80,6 +83,7 @@ table{
 
 
 #removerows{
+	transition-duration: 0.4s;
 	cursor: pointer;
 	flex-shrink: 0;
 	position: relative;
