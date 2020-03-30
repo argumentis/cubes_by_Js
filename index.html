@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="borderVisibRemoveButtons">
-	<div class="flexRow">
+	<div id="flexrow" class="flexRow">
 		<div id="removecols" onclick="removeCols(elem)"> - </div>
 		<div class="flexCol">
 			<div id="removerows" onclick="removeRows(elem)"> - </div>
@@ -130,14 +130,19 @@ window.onload = function() {
 			removerows.style.left = event.target.offsetLeft + 'px';
 			removecols.style.top = event.target.offsetTop  + 'px';
 		} 
-		
-		if (event.target.tagName === '.flexRow') {
-			removecols.style.visibility = 'visible';
-			removerows.style.visibility = 'visible';
-		} else {
-			removecols.style.visibility = 'hidden';
-			removerows.style.visibility = 'hidden';
-		}
+	}
+
+	document.getElementById("flexrow").onmouseover = mouseOver;
+	document.getElementById("flexrow").onmouseout = mouseOut;
+
+	function mouseOver() {
+		removecols.style.visibility = 'visible';
+		removerows.style.visibility = 'visible';
+	}
+
+	function mouseOut() {
+		removecols.style.visibility = 'hidden';
+		removerows.style.visibility = 'hidden';
 	}
 }
 </script>

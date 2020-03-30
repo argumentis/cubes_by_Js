@@ -1,3 +1,6 @@
+ body{
+	 background-color: #f0f8ff;
+ }
  table td{
 	padding: 20px;
 	border: 1px outset #fff;
@@ -10,6 +13,7 @@ table{
 
 .flexRow{
 	display: flex;
+	align-items: flex-start;
 	flex-direction: row;
 }
 
@@ -19,6 +23,7 @@ table{
 
 .flexCol{
 	display: flex;
+	align-items: flex-start;
 	flex-direction: column;
 }
 
@@ -26,49 +31,57 @@ table{
 	flex-shrink: 0;
 	position: relative;
 	border: 1px outset #fff;
-	width: 40px;
-	height: 40px;
+	padding: 5px 13px;
+	font-weight: bold;
+	font-size: 18pt;
 	background-color: #da9c2a;
-	text-align: center;
 	color : #fff;
-
+} #addrows:hover {
+	opacity: 0.5;
 }
 
 #addcols{
 	flex-shrink: 0;
 	position: relative;
 	border: 1px outset #fff;
-	width: 40px;
-	height: 40px;
+	padding: 6px 13px;
+	font-weight: bold;
+	font-size: 18pt;
 	background-color: #da9c2a;
-	text-align: center;
 	color : #fff;
 	margin-top: 42px;
-	
+
+} #addcols:hover {
+	opacity: 0.5;
 }
+
 
 #removecols{
 	flex-shrink: 0;
 	position: relative;
 	border: 1px outset #fff;
-	display: inline-block;
-	width: 40px;
-	height: 40px;
+	padding: 6px 16px;
+	font-weight: bold;
+	font-size: 18pt;
 	background-color:#980007;
-	text-align: center;
 	color : #fff;
 	margin-top: 42px;
 	
+} #removecols:hover {
+	opacity: 0.5;
 }
+
 
 #removerows{
 	flex-shrink: 0;
 	position: relative;
 	border: 1px outset #fff;
-	display: inline-block;
-	width: 40px;
-	height: 40px;
+	padding: 6px 16px;
+	font-weight: bold;
+	font-size: 18pt;
 	background-color:#980007;
 	text-align: center;
 	color : #fff;
+}  #removerows:hover {
+	opacity: 0.5;
 }
