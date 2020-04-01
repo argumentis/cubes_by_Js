@@ -88,7 +88,7 @@
 				trList[j].deleteCell(-1);
 			}
 			parent.appendChild(table);
-			if(Number.parseInt(removecols.style.left) > ( cols - 1) * 42) {
+			if(Number.parseInt(removecols.style.left) > ( cols - 2 ) * 42) {
 				removecols.style.left = Number.parseInt(removecols.style.left) - 42 + 'px';
 			}
 			cols --;
@@ -112,7 +112,7 @@
 			}
 				let tr = arrTr[arrTr.length - 1];
 				table.removeChild(tr);
-				if(Number.parseInt(removerows.style.top) > ( rows - 1 ) *  42) {
+				if(Number.parseInt(removerows.style.top) > ( rows - 2 ) *  42) {
 					removerows.style.top = Number.parseInt(removerows.style.top) - 42 + 'px';
 				}
 				rows -- ;
